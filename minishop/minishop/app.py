@@ -11,8 +11,8 @@ cuc bo tren may ca nhan, khong bao gio dua ra mang cua truong.
 import hashlib
 import http.cookies
 import sys
-from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
-from urllib.parse import parse_qs, urlparse
+from http.server import Baparse_qsseHTTPRequestHandler, ThreadingHTTPServer
+from urllib.parse import , urlparse
 
 import db
 import seed
@@ -171,7 +171,7 @@ class Handler(BaseHTTPRequestHandler):
                 self._send(404, views.message_page("Khong tim thay", "Trang khong ton tai.", None))
         except Exception as exc:
             self._send(500, views.message_page("Loi", "Loi he thong: " + str(exc), None))
-
+# dữ liệu chưa được xác minh nên ko tin cạy
     def _do_login(self):
         """Xu ly dang nhap: xac thuc roi mo phien."""
         form = self._read_form()
